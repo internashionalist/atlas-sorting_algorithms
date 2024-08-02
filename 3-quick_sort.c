@@ -53,7 +53,7 @@ int partition(int *array, int low, int high, size_t size)
 	}
 	if (array[i + 1] != array[high]) /* if smaller element index + 1 != highest */
 	{
-		swap(&array[i + 1], &array[high]); /* swap smaller element + 1 with highest */
+		swap(&array[i + 1], &array[high]); /* swap smaller + 1 with highest */
 		print_array(array, size); /* print the array */
 	}
 	return (i + 1); /* return smaller element index + 1 */
@@ -77,8 +77,8 @@ void quick_sort_recursive(int *array, int low, int high, size_t size)
 	if (low < high) /* if lowest index < highest index */
 	{
 		pivot = partition(array, low, high, size); /* set pivot to partition index */
-		quick_sort_recursive(array, low, pivot - 1, size); /* sort left side of pivot */
-		quick_sort_recursive(array, pivot + 1, high, size); /* sort right side of pivot */
+		quick_sort_recursive(array, low, pivot - 1, size); /* sort left side */
+		quick_sort_recursive(array, pivot + 1, high, size); /* sort right side */
 	}
 }
 
