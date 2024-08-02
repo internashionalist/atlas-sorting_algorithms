@@ -37,3 +37,21 @@ void swap_nodes(listint_t **list, listint_t *node1, listint_t *node2)
  */
 
 void insertion_sort_list(listint_t **list)
+{
+	listint_t *current; /* current node */
+	listint_t *temp; /* temporary node */
+
+	if (list == NULL || *list == NULL || (*list)->next == NULL)
+		return; /* return NOTHING */
+	current = (*list)->next; /* set current to the SECOND node */
+	while (current) /* loop through list */
+	{
+		current = current->next; /* set current to next node */
+		temp = current; /* set temp to current */
+		while (temp->prev && temp->n < temp->prev->n) /* loop other list */
+		{
+			swap_nodes(list, temp->prev, temp); /* swap nodes */
+			print_list(*list); /* print the list */
+		}
+	}
+}
