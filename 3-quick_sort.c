@@ -39,7 +39,7 @@ int partition(int *array, int low, int high, size_t size)
 	pivot = array[high]; /* set pivot to last element */
 	i = low - 1; /* set smaller element index to lowest - 1 */
 
-	for (j = low; j < high - 1; j++) /* loop through array */
+	for (j = low; j < high; j++) /* loop through array */
 	{
 		if (array[j] < pivot) /* if current element < pivot */
 		{
