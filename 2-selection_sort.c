@@ -5,7 +5,7 @@
  * printing the array after each swap
  * @array: array of integers to be sorted
  * @size: size of the array
- * 
+ *
  * Return: void
  */
 
