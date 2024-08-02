@@ -97,6 +97,6 @@ void quick_sort(int *array, size_t size)
 {
 	if (array == NULL || size < 2) /* if array is too small or NULL */
 		return; /* return nothing */
-	
+
 	quick_sort_recursive(array, 0, size - 1, size); /* sort the array */
 }
