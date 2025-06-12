@@ -30,5 +30,9 @@ void quick_sort_recursive(int *array, int low, int high, size_t size);
 void quick_sort(int *array, size_t size);
 void shell_sort(int *array, size_t size);
 void counting_sort(int *array, size_t size);
+void merge_sort(int *array, size_t size);
+void merge_sort_recursive(int *array, int *buffer, size_t left, size_t right);
+void merge(int *array, int *buffer, size_t left, size_t mid, size_t right);
+void print_subarray(int *array, size_t start, size_t end);
 
 #endif
