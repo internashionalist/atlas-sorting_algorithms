@@ -10,16 +10,16 @@
  */
 void merge_sort(int *array, size_t size)
 {
-	int *buffer;
+	int *buffer; /* temp buffer for merging */
 
-	if (!array || size < 2)
+	if (!array || size < 2) /* valid input check */
 		return;
 
-	buffer = malloc(sizeof(int) * size);
+	buffer = malloc(sizeof(int) * size); /* one malloc */
 	if (!buffer)
 		return;
 
-	merge_sort_recursive(array, buffer, 0, size);
+	merge_sort_recursive(array, buffer, 0, size); /* recursive sort */
 
 	free(buffer);
 }
@@ -35,14 +35,14 @@ void merge_sort_recursive(int *array, int *buffer, size_t left, size_t right)
 {
 	size_t mid;
 
-	if (right - left <= 1)
+	if (right - left <= 1) /* base case check */
 		return;
 
-	mid = left + (right - left) / 2;
+	mid = left + (right - left) / 2; /* find midpoint */
 
-	merge_sort_recursive(array, buffer, left, mid);
-	merge_sort_recursive(array, buffer, mid, right);
-	merge(array, buffer, left, mid, right);
+	merge_sort_recursive(array, buffer, left, mid); /* sort left half */
+	merge_sort_recursive(array, buffer, mid, right); /* sort right half */
+	merge(array, buffer, left, mid, right); /* merge the two halves */
 }
 
 /**
@@ -55,7 +55,7 @@ void merge_sort_recursive(int *array, int *buffer, size_t left, size_t right)
  */
 void merge(int *array, int *buffer, size_t left, size_t mid, size_t right)
 {
-	size_t i = left, j = mid, k = left;
+	size_t i = left, j = mid, k = left; /* indices for left, right, and buffer */
 
 	printf("Merging...\n[left]: ");
 	print_subarray(array, left, mid);
